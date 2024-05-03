@@ -1,0 +1,9 @@
+@WebApplication1_HostAddress = https://localhost:7034
+### @name GetTodoListInParallel
+
+GET {{WebApplication1_HostAddress}}/GetTodoListInParallel/
+Accept: application/json
+
+### @name GetTodoListInSequence
+GET {{WebApplication1_HostAddress}}/GetTodoListInSequence/
+Accept: application/json
