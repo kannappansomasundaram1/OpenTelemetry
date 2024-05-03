@@ -9,13 +9,13 @@ This application calls Todo List API to fetch Todo list Items
 * Calls TodoList Api in parallel
 * Demonstrate how traces look like when making http calls in Parallel
 
-![CallsInParallel.png](CallsInParallel.png)
+![CallsInParallel](CallsInParallel.png)
 
 ### GetTodoList In Sequence
 * Calls TodoList Api in sequence
 * Demonstrate how traces look like when making http calls one by one
 
-![CallsInSequence.png](CallsInSequence.png)
+![CallsInSequence](CallsInSequence.png)
 
 
 ## Register Open Telemetry services
