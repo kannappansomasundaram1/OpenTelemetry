@@ -35,11 +35,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/GetTodoListInParallel", (ITodoService todoService) =>
+app.MapGet("/GetTodoListInParallel", async (ITodoService todoService) =>
     {
         var todoItems = Enumerable.Range(1, 5).Select(todoService.GetTodoItem)
             .ToArray();
-        return Task.WhenAll(todoItems);
+        return await Task.WhenAll(todoItems);
     })
     .WithName("GetTodoListInParallel")
     .WithOpenApi();
