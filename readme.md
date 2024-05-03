@@ -1,9 +1,18 @@
 # Open Telemetry Tracing
 
-Sample application which uses Open Telemetry for Tracking and displays the traces using Jaeger
+Sample application which uses Open Telemetry for Tracking and displays the traces using Jaeger<br>
 This application calls Todo List API to fetch Todo list Items
-## Endpoints
 
+- [Open Telemetry Tracing](#open-telemetry-tracing)
+  - [Endpoints](#endpoints)
+    - [GetTodos In Parallel](#gettodos-in-parallel)
+    - [GetTodos In Sequence](#gettodos-in-sequence)
+  - [Register Open Telemetry services](#register-open-telemetry-services)
+  - [Run Jaeger in Docker](#run-jaeger-in-docker)
+  - [Add OTEL Exporter to environment variable in launch settings](#add-otel-exporter-to-environment-variable-in-launch-settings)
+
+
+## Endpoints
 
 ### GetTodoList In Parallel
 * Calls TodoList Api in parallel
@@ -53,7 +62,3 @@ Jaeger UI is available in port http://localhost/16686
   }
 }
 ```
-
-
-
-

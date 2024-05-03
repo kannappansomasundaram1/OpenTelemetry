@@ -35,17 +35,17 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/GetTodoListInParallel", async (ITodoService todoService) =>
+app.MapGet("/GetTodosInParallel", async (ITodoService todoService) =>
     {
         var todoItems = Enumerable.Range(1, 5).Select(todoService.GetTodoItem)
             .ToArray();
         return await Task.WhenAll(todoItems);
     })
-    .WithName("GetTodoListInParallel")
+    .WithName("GetTodosInParallel")
     .WithOpenApi();
 
 
-app.MapGet("/GetTodoListInSequence", async (ITodoService todoService) =>
+app.MapGet("/GetTodosInSequence", async (ITodoService todoService) =>
     {
         var todoItems = new List<TodoItem?>();
         var todoItemTasks = Enumerable.Range(1, 5).Select(todoService.GetTodoItem);
@@ -57,7 +57,7 @@ app.MapGet("/GetTodoListInSequence", async (ITodoService todoService) =>
         }
         return todoItems;
     })
-    .WithName("GetTodoListInSequence")
+    .WithName("GetTodosInSequence")
     .WithOpenApi();
 
 app.Run();
